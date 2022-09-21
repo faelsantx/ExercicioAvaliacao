@@ -105,6 +105,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // dtpdataVencimento
             // 
@@ -138,7 +139,7 @@
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Data Vencimento";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // label1
             // 
@@ -181,7 +182,7 @@
             this.cbPago.TabIndex = 26;
             this.cbPago.Text = "pago";
             this.cbPago.UseVisualStyleBackColor = true;
-            this.cbPago.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            
             // 
             // label5
             // 

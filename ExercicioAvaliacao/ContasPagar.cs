@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,48 @@ namespace ExercicioAvaliacao
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnInserir_Click(object sender, EventArgs e)
         {
+            Data();
+            verificaVazio();
 
+            if (btnInserir.Text == "INSERIR" && continua == "yes")
+            {
+                try
+                {
+                    using (MySqlConnection cnn = new MySqlConnection())
+                    {
+                        cnn.ConnectionString = "server=localhost;database=controle;uid=root;pwd=;port=3306";
+                        cnn.Open();
+                        MessageBox.Show("Inserido com sucesso!");
+                        string sql = "insert into agenda (nome,descricao,valor,dataVencimento,dataConclusao,pago_recebido,tipo) values ('" + txtNome.Text + "','" + txtDescricao.Text + "','" + txtValor + "','" + .Text + "')";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+            Mostrar();
+            limpar();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        void Data()
         {
-
+            ClasseData.Data = dtpdataVencimento.Value;
+            string dataCurta = ClasseData.Data.ToShortDateString();
+            string[] vetData = dataCurta.Split('/');
+            ClasseData.DataNova = $"{vetData[2]}-{vetData[1]}-{vetData[0]}";
         }
+
+
+
     }
+
+    
 }
