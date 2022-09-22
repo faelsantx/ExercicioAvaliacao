@@ -37,6 +37,12 @@
             this.btnContasPagar = new System.Windows.Forms.Button();
             this.btnContasReceber = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.labelPesquisa = new System.Windows.Forms.Label();
+            this.labelIdConta = new System.Windows.Forms.Label();
+            this.txtIdContas = new System.Windows.Forms.TextBox();
+            this.txtPesquisa2 = new System.Windows.Forms.TextBox();
+            this.labelPesquisa2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasReceber)).BeginInit();
             this.SuspendLayout();
@@ -122,11 +128,65 @@
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(620, 139);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(144, 20);
+            this.txtPesquisa.TabIndex = 6;
+            // 
+            // labelPesquisa
+            // 
+            this.labelPesquisa.AutoSize = true;
+            this.labelPesquisa.Location = new System.Drawing.Point(564, 146);
+            this.labelPesquisa.Name = "labelPesquisa";
+            this.labelPesquisa.Size = new System.Drawing.Size(50, 13);
+            this.labelPesquisa.TabIndex = 7;
+            this.labelPesquisa.Text = "Pesquisa";
+            // 
+            // labelIdConta
+            // 
+            this.labelIdConta.AutoSize = true;
+            this.labelIdConta.Location = new System.Drawing.Point(698, 63);
+            this.labelIdConta.Name = "labelIdConta";
+            this.labelIdConta.Size = new System.Drawing.Size(21, 13);
+            this.labelIdConta.TabIndex = 8;
+            this.labelIdConta.Text = "ID:";
+            // 
+            // txtIdContas
+            // 
+            this.txtIdContas.Location = new System.Drawing.Point(725, 56);
+            this.txtIdContas.Name = "txtIdContas";
+            this.txtIdContas.Size = new System.Drawing.Size(53, 20);
+            this.txtIdContas.TabIndex = 9;
+            // 
+            // txtPesquisa2
+            // 
+            this.txtPesquisa2.Location = new System.Drawing.Point(620, 354);
+            this.txtPesquisa2.Name = "txtPesquisa2";
+            this.txtPesquisa2.Size = new System.Drawing.Size(144, 20);
+            this.txtPesquisa2.TabIndex = 10;
+            // 
+            // labelPesquisa2
+            // 
+            this.labelPesquisa2.AutoSize = true;
+            this.labelPesquisa2.Location = new System.Drawing.Point(564, 361);
+            this.labelPesquisa2.Name = "labelPesquisa2";
+            this.labelPesquisa2.Size = new System.Drawing.Size(50, 13);
+            this.labelPesquisa2.TabIndex = 11;
+            this.labelPesquisa2.Text = "Pesquisa";
+            // 
             // ControleContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
+            this.Controls.Add(this.labelPesquisa2);
+            this.Controls.Add(this.txtPesquisa2);
+            this.Controls.Add(this.txtIdContas);
+            this.Controls.Add(this.labelIdConta);
+            this.Controls.Add(this.labelPesquisa);
+            this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnReceber);
             this.Controls.Add(this.btnContasReceber);
@@ -138,6 +198,7 @@
             this.Controls.Add(this.dgwContasPagar);
             this.Name = "ControleContas";
             this.Text = "ControleContas";
+            
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasReceber)).EndInit();
             this.ResumeLayout(false);
@@ -156,5 +217,11 @@
         private System.Windows.Forms.Button btnContasPagar;
         private System.Windows.Forms.Button btnContasReceber;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label labelPesquisa;
+        private System.Windows.Forms.Label labelIdConta;
+        private System.Windows.Forms.TextBox txtIdContas;
+        private System.Windows.Forms.TextBox txtPesquisa2;
+        private System.Windows.Forms.Label labelPesquisa2;
     }
 }

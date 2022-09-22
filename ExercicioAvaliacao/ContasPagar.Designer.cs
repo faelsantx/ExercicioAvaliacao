@@ -34,8 +34,8 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.dtpdataVencimento = new System.Windows.Forms.DateTimePicker();
-            this.txtIdContasPagar = new System.Windows.Forms.TextBox();
+            this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
+            this.txtIdContas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.cbPago = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.labelTipoConta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).BeginInit();
             this.SuspendLayout();
@@ -57,15 +59,15 @@
             this.panel1.Controls.Add(this.btnDeletar);
             this.panel1.Controls.Add(this.btnAlterar);
             this.panel1.Controls.Add(this.btnInserir);
-            this.panel1.Location = new System.Drawing.Point(54, 203);
+            this.panel1.Location = new System.Drawing.Point(54, 237);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 225);
+            this.panel1.Size = new System.Drawing.Size(728, 222);
             this.panel1.TabIndex = 22;
             // 
             // dgwContasPagar
             // 
             this.dgwContasPagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwContasPagar.Location = new System.Drawing.Point(19, 76);
+            this.dgwContasPagar.Location = new System.Drawing.Point(19, 73);
             this.dgwContasPagar.Name = "dgwContasPagar";
             this.dgwContasPagar.Size = new System.Drawing.Size(690, 135);
             this.dgwContasPagar.TabIndex = 13;
@@ -107,20 +109,20 @@
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
-            // dtpdataVencimento
+            // dtpDataVencimento
             // 
-            this.dtpdataVencimento.Location = new System.Drawing.Point(504, 42);
-            this.dtpdataVencimento.Name = "dtpdataVencimento";
-            this.dtpdataVencimento.Size = new System.Drawing.Size(278, 20);
-            this.dtpdataVencimento.TabIndex = 21;
+            this.dtpDataVencimento.Location = new System.Drawing.Point(486, 198);
+            this.dtpDataVencimento.Name = "dtpDataVencimento";
+            this.dtpDataVencimento.Size = new System.Drawing.Size(278, 20);
+            this.dtpDataVencimento.TabIndex = 21;
             // 
-            // txtIdContasPagar
+            // txtIdContas
             // 
-            this.txtIdContasPagar.Enabled = false;
-            this.txtIdContasPagar.Location = new System.Drawing.Point(131, 41);
-            this.txtIdContasPagar.Name = "txtIdContasPagar";
-            this.txtIdContasPagar.Size = new System.Drawing.Size(56, 20);
-            this.txtIdContasPagar.TabIndex = 20;
+            this.txtIdContas.Enabled = false;
+            this.txtIdContas.Location = new System.Drawing.Point(131, 41);
+            this.txtIdContas.Name = "txtIdContas";
+            this.txtIdContas.Size = new System.Drawing.Size(56, 20);
+            this.txtIdContas.TabIndex = 20;
             // 
             // label3
             // 
@@ -134,12 +136,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(385, 48);
+            this.label2.Location = new System.Drawing.Point(367, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "Data Vencimento";
-            
             // 
             // label1
             // 
@@ -182,7 +183,6 @@
             this.cbPago.TabIndex = 26;
             this.cbPago.Text = "pago";
             this.cbPago.UseVisualStyleBackColor = true;
-            
             // 
             // label5
             // 
@@ -200,11 +200,29 @@
             this.txtNome.Size = new System.Drawing.Size(242, 20);
             this.txtNome.TabIndex = 28;
             // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(131, 195);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(156, 20);
+            this.txtTipo.TabIndex = 29;
+            // 
+            // labelTipoConta
+            // 
+            this.labelTipoConta.AutoSize = true;
+            this.labelTipoConta.Location = new System.Drawing.Point(33, 198);
+            this.labelTipoConta.Name = "labelTipoConta";
+            this.labelTipoConta.Size = new System.Drawing.Size(73, 13);
+            this.labelTipoConta.TabIndex = 30;
+            this.labelTipoConta.Text = "Tipo da conta";
+            // 
             // ContasPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 485);
+            this.Controls.Add(this.labelTipoConta);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbPago);
@@ -212,8 +230,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtpdataVencimento);
-            this.Controls.Add(this.txtIdContasPagar);
+            this.Controls.Add(this.dtpDataVencimento);
+            this.Controls.Add(this.txtIdContas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -233,8 +251,8 @@
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.DateTimePicker dtpdataVencimento;
-        private System.Windows.Forms.TextBox txtIdContasPagar;
+        private System.Windows.Forms.DateTimePicker dtpDataVencimento;
+        private System.Windows.Forms.TextBox txtIdContas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -245,5 +263,7 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Label labelTipoConta;
     }
 }

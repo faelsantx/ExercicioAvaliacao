@@ -38,13 +38,15 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.dtpDataVencimento = new System.Windows.Forms.DateTimePicker();
-            this.txtIdContasReceber = new System.Windows.Forms.TextBox();
+            this.txtIdContas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbRecebido = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.labelTipoConta = new System.Windows.Forms.Label();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasReceber)).BeginInit();
             this.SuspendLayout();
@@ -80,9 +82,9 @@
             this.panel1.Controls.Add(this.btnDeletar);
             this.panel1.Controls.Add(this.btnAlterar);
             this.panel1.Controls.Add(this.btnInserir);
-            this.panel1.Location = new System.Drawing.Point(50, 202);
+            this.panel1.Location = new System.Drawing.Point(50, 229);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 225);
+            this.panel1.Size = new System.Drawing.Size(728, 232);
             this.panel1.TabIndex = 31;
             // 
             // btnPesquisar
@@ -128,6 +130,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // dtpDataVencimento
             // 
@@ -136,13 +139,13 @@
             this.dtpDataVencimento.Size = new System.Drawing.Size(278, 20);
             this.dtpDataVencimento.TabIndex = 30;
             // 
-            // txtIdContasReceber
+            // txtIdContas
             // 
-            this.txtIdContasReceber.Enabled = false;
-            this.txtIdContasReceber.Location = new System.Drawing.Point(127, 40);
-            this.txtIdContasReceber.Name = "txtIdContasReceber";
-            this.txtIdContasReceber.Size = new System.Drawing.Size(56, 20);
-            this.txtIdContasReceber.TabIndex = 29;
+            this.txtIdContas.Enabled = false;
+            this.txtIdContas.Location = new System.Drawing.Point(127, 40);
+            this.txtIdContas.Name = "txtIdContas";
+            this.txtIdContas.Size = new System.Drawing.Size(56, 20);
+            this.txtIdContas.TabIndex = 29;
             // 
             // label3
             // 
@@ -197,11 +200,29 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Nome";
             // 
+            // labelTipoConta
+            // 
+            this.labelTipoConta.AutoSize = true;
+            this.labelTipoConta.Location = new System.Drawing.Point(37, 195);
+            this.labelTipoConta.Name = "labelTipoConta";
+            this.labelTipoConta.Size = new System.Drawing.Size(73, 13);
+            this.labelTipoConta.TabIndex = 38;
+            this.labelTipoConta.Text = "Tipo da conta";
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(127, 188);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(156, 20);
+            this.txtTipo.TabIndex = 39;
+            // 
             // ContasReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 473);
+            this.Controls.Add(this.txtTipo);
+            this.Controls.Add(this.labelTipoConta);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbRecebido);
@@ -210,7 +231,7 @@
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtpDataVencimento);
-            this.Controls.Add(this.txtIdContasReceber);
+            this.Controls.Add(this.txtIdContas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -234,7 +255,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.DateTimePicker dtpDataVencimento;
-        private System.Windows.Forms.TextBox txtIdContasReceber;
+        private System.Windows.Forms.TextBox txtIdContas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -242,5 +263,7 @@
         private System.Windows.Forms.CheckBox cbRecebido;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelTipoConta;
+        private System.Windows.Forms.TextBox txtTipo;
     }
 }
