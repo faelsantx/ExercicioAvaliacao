@@ -61,7 +61,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
@@ -356,12 +356,12 @@
             this.label14.TabIndex = 7;
             this.label14.Text = "Data Nascimento";
             // 
-            // dtpDataNascimento
+            // dtpData
             // 
-            this.dtpDataNascimento.Location = new System.Drawing.Point(115, 149);
-            this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(355, 20);
-            this.dtpDataNascimento.TabIndex = 16;
+            this.dtpData.Location = new System.Drawing.Point(115, 149);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(355, 20);
+            this.dtpData.TabIndex = 16;
             // 
             // label15
             // 
@@ -402,7 +402,7 @@
             this.Controls.Add(this.rbFeminino);
             this.Controls.Add(this.rbMasculino);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.dtpDataNascimento);
+            this.Controls.Add(this.dtpData);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgwTelefones);
             this.Controls.Add(this.cmbEstado);
@@ -476,7 +476,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
+        private System.Windows.Forms.DateTimePicker dtpData;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
