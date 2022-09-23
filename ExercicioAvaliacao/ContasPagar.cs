@@ -208,6 +208,9 @@ namespace ExercicioAvaliacao
             }
         }
 
+        private void ContasPagar_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

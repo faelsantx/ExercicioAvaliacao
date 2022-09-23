@@ -237,6 +237,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ContasPagar";
             this.Text = "ContasPagar";
+            this.Load += new System.EventHandler(this.ContasPagar_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).EndInit();
             this.ResumeLayout(false);

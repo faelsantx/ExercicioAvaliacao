@@ -27,7 +27,7 @@ namespace ExercicioAvaliacao
             Data();
             verificaVazio();
 
-            if (btnInserir.Text == "INSERIR" && continua == "yes") 
+            if (btnInserir.Text == "INSERIR" && continua == "yes")
             {
                 try
                 {
@@ -48,7 +48,7 @@ namespace ExercicioAvaliacao
                     MessageBox.Show(ex.ToString());
                 }
             }
-    
+
             Mostrar();
             limpar();
         }
@@ -81,7 +81,7 @@ namespace ExercicioAvaliacao
                         MessageBox.Show(ex.ToString());
                     }
             }
-                Mostrar();
+            Mostrar();
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
@@ -108,15 +108,15 @@ namespace ExercicioAvaliacao
                     MessageBox.Show(ex.ToString());
                 }
             }
-            
+
         }
 
-       
+
         void limpar()
         {
             txtIdAgenda.Text = "";
             txtTitulo.Text = "";
-            cmbHora.Text = "";          
+            cmbHora.Text = "";
             txtPesquisar.Text = "";
             rtbDescricao.Text = "";
             btnInserir.Text = "INSERIR";
@@ -183,19 +183,43 @@ namespace ExercicioAvaliacao
 
             }
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            string pesquisa = txtPesquisar.Text;
+            var i = pesquisa;
+
+            if (i == pesquisa)
+            {
+                try
+                {
+
+                    using (MySqlConnection cnx = new MySqlConnection())
+                    {
+                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306; Convert Zero DateTime = true";
+                        cnx.Open();
+                        string sql = "select * from agenda where titulo like '" + txtPesquisar.Text + "%'";
+                        DataTable table = new DataTable();
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(sql, cnx);
+                        adapter.Fill(table);
+                        dgwAgenda.DataSource = table;
+                        dgwAgenda.AutoGenerateColumns = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+
+
+        }
+
+
+
+
     }
-  
-
-
-
 }
     
