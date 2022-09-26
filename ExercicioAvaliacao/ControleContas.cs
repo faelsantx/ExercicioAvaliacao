@@ -76,26 +76,9 @@ namespace ExercicioAvaliacao
             }
         }
 
-        private void dgwContasPagar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void btnPagar_Click_1(object sender, EventArgs e)
         {
-            if (dgwContasPagar.CurrentRow.Index != -1)
-            {
-                txtIdContas.Text = dgwContasPagar.CurrentRow.Cells[0].Value.ToString();
-            }
-        }
-
-        private void dgwContasReceber_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgwContasReceber.CurrentRow.Index != -1)
-            {
-                txtIdContas.Text = dgwContasReceber.CurrentRow.Cells[0].Value.ToString();
-            }
-        }
-
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-
-
             if (MessageBox.Show("Deseja efetuar o pagamento?", "PAGAMENTO", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
 
@@ -107,7 +90,7 @@ namespace ExercicioAvaliacao
 
                         cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
                         cnn.Open();
-                        string sql = "update contas set pago_recebido = 'Pago', dataConclusao = NOW()  where idContasPagar = '" + txtIdContas.Text + "'";
+                        string sql = "update contas set pago_recebido = '1', dataConclusao = NOW()  where idContasPagar = '" + txtIdContas.Text + "'";
                         MySqlCommand cmd = new MySqlCommand(sql, cnn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Pagamento efetuado com sucesso!");
@@ -123,14 +106,10 @@ namespace ExercicioAvaliacao
 
             }
             MostrarPagar();
-
-                
-
         }
 
-        private void btnReceber_Click(object sender, EventArgs e)
+        private void btnReceber_Click_1(object sender, EventArgs e)
         {
-
             if (MessageBox.Show("Confirmar o recebimento?", "RECEBIMENTO", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
 
@@ -142,7 +121,7 @@ namespace ExercicioAvaliacao
 
                         cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
                         cnn.Open();
-                        string sql = "update contas set pago_recebido = 'Recebido',dataConclusao = NOW() where idContasPagar = '" + txtIdContas.Text + "'";
+                        string sql = "update contas set pago_recebido = '1',dataConclusao = NOW() where idContasPagar = '" + txtIdContas.Text + "'";
                         MySqlCommand cmd = new MySqlCommand(sql, cnn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Dinheiro recebido com sucesso!");
@@ -159,6 +138,20 @@ namespace ExercicioAvaliacao
             MostrarReceber();
         }
 
-        
+        private void dgwContasPagar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwContasPagar.CurrentRow.Index != -1)
+            {
+                txtIdContas.Text = dgwContasPagar.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void dgwContasReceber_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwContasReceber.CurrentRow.Index != -1)
+            {
+                txtIdContas.Text = dgwContasReceber.CurrentRow.Cells[0].Value.ToString();
+            }
+        }
     }
 }

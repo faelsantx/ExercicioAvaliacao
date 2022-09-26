@@ -237,6 +237,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnDeletar
             // 
@@ -246,6 +247,7 @@
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
             // dgwTelefones
             // 
@@ -278,6 +280,7 @@
             this.dgwContatos.Name = "dgwContatos";
             this.dgwContatos.Size = new System.Drawing.Size(690, 135);
             this.dgwContatos.TabIndex = 13;
+            this.dgwContatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwContatos_CellContentDoubleClick);
             // 
             // txtPesquisar
             // 

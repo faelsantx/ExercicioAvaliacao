@@ -238,106 +238,6 @@ namespace ExercicioAvaliacao
             }
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-
-            Data();
-
-            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnx = new MySqlConnection())
-                    {
-                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                        cnx.Open();
-                        string sql = "insert into endereco (logradouro,cidade,bairro,UF,cep) values ('" + txtLogradouro.Text + "','" + txtCidade.Text + "','" + txtBairro.Text + "','" + cmbUF.Text + "','" + txtCEP.Text + "')";
-                        txtLogradouro.Enabled = false;
-                        txtBairro.Enabled = false;
-                        txtCidade.Enabled = false;
-                        cmbUF.Enabled = false;
-                        string sql3 = "update contato set nome = '" + txtNome.Text + "',email = '" + txtEmail.Text + "', CPF = '" + txtCPF.Text + "', dataNascimento = '" + ClasseData.DataNova + "', numeroCasa = '" + txtNumeroCasa.Text + "', complemento = '" + txtComplemento.Text + "', fkEndereco = ( select idEndereco from endereco where  CEP = '" + txtCEP.Text + "' limit 1) where idContato = '" + txtID.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
-                        cmd.ExecuteNonQuery();
-                        MySqlCommand cmd3 = new MySqlCommand(sql3, cnx);
-                        cmd3.ExecuteNonQuery();
-                        MessageBox.Show("Atualizado com sucesso");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            Mostrar();
-
-        }
-
-        private void dgwContatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgwContatos.CurrentRow.Index != -1)
-            {
-                txtID.Text = dgwContatos.CurrentRow.Cells[0].Value.ToString();
-                txtNome.Text = dgwContatos.CurrentRow.Cells[1].Value.ToString();
-                txtCPF.Text = dgwContatos.CurrentRow.Cells[2].Value.ToString();
-                dtpData.Value = Convert.ToDateTime(dgwContatos.CurrentRow.Cells[3].Value.ToString());
-                txtEmail.Text = dgwContatos.CurrentRow.Cells[4].Value.ToString();
-                rbMasculino.Text = dgwContatos.CurrentRow.Cells[5].Value.ToString();
-                string masculino = rbMasculino.Text;
-
-                if (masculino == "Masculino")
-                {
-                    rbMasculino.Checked = true;
-                    rbFeminino.Checked = false;
-
-                }
-                else
-                {
-                    rbMasculino.Text = "Masculino";
-                    rbFeminino.Checked = true;
-                    rbMasculino.Checked = false;
-                }
-                txtCEP.Text = dgwContatos.CurrentRow.Cells[6].Value.ToString();
-                txtLogradouro.Text = dgwContatos.CurrentRow.Cells[7].Value.ToString();
-                txtNumeroCasa.Text = dgwContatos.CurrentRow.Cells[8].Value.ToString();
-                txtComplemento.Text = dgwContatos.CurrentRow.Cells[9].Value.ToString();
-                txtBairro.Text = dgwContatos.CurrentRow.Cells[10].Value.ToString();
-                txtCidade.Text = dgwContatos.CurrentRow.Cells[11].Value.ToString();
-                cmbUF.Text = dgwContatos.CurrentRow.Cells[12].Value.ToString();
-
-                btnInserir.Text = "ADD NEW";
-                btnDeletar.Visible = true;
-                btnAlterar.Visible = true;
-
-            }
-            MostrarTelefone();
-        }
-
-        private void btnDeletar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnn = new MySqlConnection())
-                    {
-                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                        cnn.Open();
-                        string sql = "delete from contato where idContato = '" + txtID.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Deletado com sucesso!");
-
-                    }
-                    Limpar();
-                    Mostrar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
@@ -383,6 +283,104 @@ namespace ExercicioAvaliacao
             }
         }
 
+        private void dgwContatos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwContatos.CurrentRow.Index != -1)
+            {
+                txtID.Text = dgwContatos.CurrentRow.Cells[0].Value.ToString();
+                txtNome.Text = dgwContatos.CurrentRow.Cells[1].Value.ToString();
+                txtCPF.Text = dgwContatos.CurrentRow.Cells[2].Value.ToString();
+                dtpData.Value = Convert.ToDateTime(dgwContatos.CurrentRow.Cells[3].Value.ToString());
+                txtEmail.Text = dgwContatos.CurrentRow.Cells[4].Value.ToString();
+                rbMasculino.Text = dgwContatos.CurrentRow.Cells[5].Value.ToString();
+                string masculino = rbMasculino.Text;
+
+                if (masculino == "Masculino")
+                {
+                    rbMasculino.Checked = true;
+                    rbFeminino.Checked = false;
+
+                }
+                else
+                {
+                    rbMasculino.Text = "Masculino";
+                    rbFeminino.Checked = true;
+                    rbMasculino.Checked = false;
+                }
+                txtCEP.Text = dgwContatos.CurrentRow.Cells[6].Value.ToString();
+                txtLogradouro.Text = dgwContatos.CurrentRow.Cells[7].Value.ToString();
+                txtNumeroCasa.Text = dgwContatos.CurrentRow.Cells[8].Value.ToString();
+                txtComplemento.Text = dgwContatos.CurrentRow.Cells[9].Value.ToString();
+                txtBairro.Text = dgwContatos.CurrentRow.Cells[10].Value.ToString();
+                txtCidade.Text = dgwContatos.CurrentRow.Cells[11].Value.ToString();
+                cmbUF.Text = dgwContatos.CurrentRow.Cells[12].Value.ToString();
+
+                btnInserir.Text = "NOVO";
+                btnDeletar.Visible = true;
+                btnAlterar.Visible = true;
+
+            }
+            MostrarTelefone();
         
+    }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+            Data();
+
+            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnx = new MySqlConnection())
+                    {
+                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                        cnx.Open();
+                        string sql = "insert into endereco (logradouro,cidade,bairro,UF,cep) values ('" + txtLogradouro.Text + "','" + txtCidade.Text + "','" + txtBairro.Text + "','" + cmbUF.Text + "','" + txtCEP.Text + "')";
+                        txtLogradouro.Enabled = false;
+                        txtBairro.Enabled = false;
+                        txtCidade.Enabled = false;
+                        cmbUF.Enabled = false;
+                        string sql3 = "update contato set nome = '" + txtNome.Text + "',email = '" + txtEmail.Text + "', CPF = '" + txtCPF.Text + "', dataNascimento = '" + ClasseData.DataNova + "', numeroCasa = '" + txtNumeroCasa.Text + "', complemento = '" + txtComplemento.Text + "', fkEndereco = ( select idEndereco from endereco where  CEP = '" + txtCEP.Text + "' limit 1) where idContato = '" + txtID.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
+                        cmd.ExecuteNonQuery();
+                        MySqlCommand cmd3 = new MySqlCommand(sql3, cnx);
+                        cmd3.ExecuteNonQuery();
+                        MessageBox.Show("Atualizado com sucesso");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            Mostrar();
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnn = new MySqlConnection())
+                    {
+                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                        cnn.Open();
+                        string sql = "delete from contato where idContato = '" + txtID.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Deletado com sucesso!");
+
+                    }
+                    Limpar();
+                    Mostrar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

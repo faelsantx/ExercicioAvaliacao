@@ -54,6 +54,7 @@
             this.dgwContasPagar.Name = "dgwContasPagar";
             this.dgwContasPagar.Size = new System.Drawing.Size(500, 140);
             this.dgwContasPagar.TabIndex = 0;
+            this.dgwContasPagar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwContasPagar_CellContentClick);
             // 
             // dgwContasReceber
             // 
@@ -62,6 +63,7 @@
             this.dgwContasReceber.Name = "dgwContasReceber";
             this.dgwContasReceber.Size = new System.Drawing.Size(500, 140);
             this.dgwContasReceber.TabIndex = 1;
+            this.dgwContasReceber.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwContasReceber_CellContentClick);
             // 
             // label1
             // 
@@ -83,26 +85,27 @@
             // 
             // btnPagar
             // 
-            this.btnPagar.Location = new System.Drawing.Point(548, 48);
+            this.btnPagar.Location = new System.Drawing.Point(544, 75);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(119, 29);
             this.btnPagar.TabIndex = 4;
-            this.btnPagar.Text = "pagar";
+            this.btnPagar.Text = "PAGAR CONTA";
             this.btnPagar.UseVisualStyleBackColor = true;
-          
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click_1);
             // 
             // btnReceber
             // 
-            this.btnReceber.Location = new System.Drawing.Point(548, 251);
+            this.btnReceber.Location = new System.Drawing.Point(548, 279);
             this.btnReceber.Name = "btnReceber";
             this.btnReceber.Size = new System.Drawing.Size(119, 29);
             this.btnReceber.TabIndex = 4;
-            this.btnReceber.Text = "receber";
+            this.btnReceber.Text = "RECEBER CONTA";
             this.btnReceber.UseVisualStyleBackColor = true;
+            this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click_1);
             // 
             // btnContasPagar
             // 
-            this.btnContasPagar.Location = new System.Drawing.Point(548, 83);
+            this.btnContasPagar.Location = new System.Drawing.Point(669, 75);
             this.btnContasPagar.Name = "btnContasPagar";
             this.btnContasPagar.Size = new System.Drawing.Size(119, 29);
             this.btnContasPagar.TabIndex = 4;
@@ -112,7 +115,7 @@
             // 
             // btnContasReceber
             // 
-            this.btnContasReceber.Location = new System.Drawing.Point(548, 286);
+            this.btnContasReceber.Location = new System.Drawing.Point(673, 279);
             this.btnContasReceber.Name = "btnContasReceber";
             this.btnContasReceber.Size = new System.Drawing.Size(119, 29);
             this.btnContasReceber.TabIndex = 4;
@@ -131,7 +134,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(620, 139);
+            this.txtPesquisa.Location = new System.Drawing.Point(644, 124);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(144, 20);
             this.txtPesquisa.TabIndex = 6;
@@ -139,7 +142,7 @@
             // labelPesquisa
             // 
             this.labelPesquisa.AutoSize = true;
-            this.labelPesquisa.Location = new System.Drawing.Point(564, 146);
+            this.labelPesquisa.Location = new System.Drawing.Point(588, 131);
             this.labelPesquisa.Name = "labelPesquisa";
             this.labelPesquisa.Size = new System.Drawing.Size(50, 13);
             this.labelPesquisa.TabIndex = 7;
@@ -148,7 +151,7 @@
             // labelIdConta
             // 
             this.labelIdConta.AutoSize = true;
-            this.labelIdConta.Location = new System.Drawing.Point(698, 63);
+            this.labelIdConta.Location = new System.Drawing.Point(708, 19);
             this.labelIdConta.Name = "labelIdConta";
             this.labelIdConta.Size = new System.Drawing.Size(21, 13);
             this.labelIdConta.TabIndex = 8;
@@ -156,14 +159,14 @@
             // 
             // txtIdContas
             // 
-            this.txtIdContas.Location = new System.Drawing.Point(725, 56);
+            this.txtIdContas.Location = new System.Drawing.Point(735, 12);
             this.txtIdContas.Name = "txtIdContas";
             this.txtIdContas.Size = new System.Drawing.Size(53, 20);
             this.txtIdContas.TabIndex = 9;
             // 
             // txtPesquisa2
             // 
-            this.txtPesquisa2.Location = new System.Drawing.Point(620, 354);
+            this.txtPesquisa2.Location = new System.Drawing.Point(644, 345);
             this.txtPesquisa2.Name = "txtPesquisa2";
             this.txtPesquisa2.Size = new System.Drawing.Size(144, 20);
             this.txtPesquisa2.TabIndex = 10;
@@ -171,7 +174,7 @@
             // labelPesquisa2
             // 
             this.labelPesquisa2.AutoSize = true;
-            this.labelPesquisa2.Location = new System.Drawing.Point(564, 361);
+            this.labelPesquisa2.Location = new System.Drawing.Point(588, 352);
             this.labelPesquisa2.Name = "labelPesquisa2";
             this.labelPesquisa2.Size = new System.Drawing.Size(50, 13);
             this.labelPesquisa2.TabIndex = 11;
