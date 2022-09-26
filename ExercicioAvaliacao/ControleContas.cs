@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,6 +125,9 @@ namespace ExercicioAvaliacao
 
             }
             MostrarPagar();
+
+                
+
         }
 
         private void btnReceber_Click(object sender, EventArgs e)

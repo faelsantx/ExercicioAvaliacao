@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtIdTelefone = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtNomeProprietario = new System.Windows.Forms.TextBox();
             this.txtDDD = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
@@ -92,13 +92,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "ID";
             // 
-            // txtIdTelefone
+            // txtID
             // 
-            this.txtIdTelefone.Enabled = false;
-            this.txtIdTelefone.Location = new System.Drawing.Point(136, 21);
-            this.txtIdTelefone.Name = "txtIdTelefone";
-            this.txtIdTelefone.Size = new System.Drawing.Size(57, 20);
-            this.txtIdTelefone.TabIndex = 5;
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(136, 21);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(57, 20);
+            this.txtID.TabIndex = 5;
             // 
             // txtNomeProprietario
             // 
@@ -137,6 +137,7 @@
             this.btnInserir.TabIndex = 11;
             this.btnInserir.Text = "INSERIR";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnAlterar
             // 
@@ -185,7 +186,7 @@
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtDDD);
             this.Controls.Add(this.txtNomeProprietario);
-            this.Controls.Add(this.txtIdTelefone);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -193,7 +194,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Telefones";
             this.Text = "Telefones";
-            this.Load += new System.EventHandler(this.Telefones_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwTelefones)).EndInit();
             this.ResumeLayout(false);
@@ -208,7 +208,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtIdTelefone;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNomeProprietario;
         private System.Windows.Forms.TextBox txtDDD;
         private System.Windows.Forms.TextBox txtNumero;

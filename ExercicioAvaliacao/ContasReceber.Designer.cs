@@ -95,6 +95,7 @@
             this.btnPesquisar.TabIndex = 14;
             this.btnPesquisar.Text = "PESQUISAR";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+           
             // 
             // dgwContasReceber
             // 

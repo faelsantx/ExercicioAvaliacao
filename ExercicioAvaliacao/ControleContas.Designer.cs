@@ -98,6 +98,7 @@
             this.btnReceber.TabIndex = 4;
             this.btnReceber.Text = "receber";
             this.btnReceber.UseVisualStyleBackColor = true;
+            
             // 
             // btnContasPagar
             // 
@@ -198,7 +199,6 @@
             this.Controls.Add(this.dgwContasPagar);
             this.Name = "ControleContas";
             this.Text = "ControleContas";
-            
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasReceber)).EndInit();
             this.ResumeLayout(false);

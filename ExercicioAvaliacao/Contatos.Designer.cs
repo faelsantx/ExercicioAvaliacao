@@ -38,14 +38,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtIdContato = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtNumeroCasa = new System.Windows.Forms.TextBox();
+            this.cmbUF = new System.Windows.Forms.ComboBox();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -161,13 +161,13 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Número";
             // 
-            // txtIdContato
+            // txtID
             // 
-            this.txtIdContato.Enabled = false;
-            this.txtIdContato.Location = new System.Drawing.Point(115, 28);
-            this.txtIdContato.Name = "txtIdContato";
-            this.txtIdContato.Size = new System.Drawing.Size(46, 20);
-            this.txtIdContato.TabIndex = 10;
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(115, 28);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(46, 20);
+            this.txtID.TabIndex = 10;
             // 
             // txtNome
             // 
@@ -178,7 +178,6 @@
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Enabled = false;
             this.txtLogradouro.Location = new System.Drawing.Point(115, 188);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(355, 20);
@@ -186,7 +185,6 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Enabled = false;
             this.txtCidade.Location = new System.Drawing.Point(115, 223);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(168, 20);
@@ -194,7 +192,6 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Enabled = false;
             this.txtBairro.Location = new System.Drawing.Point(337, 223);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(133, 20);
@@ -207,22 +204,20 @@
             this.txtCEP.Size = new System.Drawing.Size(120, 20);
             this.txtCEP.TabIndex = 10;
             // 
-            // txtNumero
+            // txtNumeroCasa
             // 
-            this.txtNumero.Enabled = false;
-            this.txtNumero.Location = new System.Drawing.Point(399, 258);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(71, 20);
-            this.txtNumero.TabIndex = 10;
+            this.txtNumeroCasa.Location = new System.Drawing.Point(399, 258);
+            this.txtNumeroCasa.Name = "txtNumeroCasa";
+            this.txtNumeroCasa.Size = new System.Drawing.Size(71, 20);
+            this.txtNumeroCasa.TabIndex = 10;
             // 
-            // cmbEstado
+            // cmbUF
             // 
-            this.cmbEstado.Enabled = false;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(115, 257);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(54, 21);
-            this.cmbEstado.TabIndex = 11;
+            this.cmbUF.FormattingEnabled = true;
+            this.cmbUF.Location = new System.Drawing.Point(115, 257);
+            this.cmbUF.Name = "cmbUF";
+            this.cmbUF.Size = new System.Drawing.Size(54, 21);
+            this.cmbUF.TabIndex = 11;
             // 
             // btnInserir
             // 
@@ -251,6 +246,7 @@
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
             // dgwTelefones
             // 
@@ -325,7 +321,6 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Enabled = false;
             this.txtComplemento.Location = new System.Drawing.Point(115, 288);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(355, 20);
@@ -405,17 +400,17 @@
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgwTelefones);
-            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.cmbUF);
             this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtNumeroCasa);
             this.Controls.Add(this.txtCEP);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtLogradouro);
             this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.txtIdContato);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label12);
@@ -453,14 +448,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtIdContato;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtCEP;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.TextBox txtNumeroCasa;
+        private System.Windows.Forms.ComboBox cmbUF;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnDeletar;

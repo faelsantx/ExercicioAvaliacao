@@ -20,8 +20,7 @@ namespace ExercicioAvaliacao
             btnAlterar.Visible = false;
             btnDeletar.Visible = false;
         }
-
-        string continua;
+ string continua;
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Data();
@@ -187,9 +186,9 @@ namespace ExercicioAvaliacao
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             string pesquisa = txtPesquisar.Text;
-            var i = pesquisa;
+            var p = pesquisa;
 
-            if (i == pesquisa)
+            if (p == pesquisa)
             {
                 try
                 {
