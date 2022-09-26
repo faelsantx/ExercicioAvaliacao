@@ -206,19 +206,19 @@ namespace ExercicioAvaliacao
 
         void Limpar()
         {
-            txtNome.Clear();
-            txtEmail.Clear();
-            txtCPF.Clear();
-            txtCEP.Clear();
-            txtLogradouro.Clear();
-            txtCidade.Clear();
-            txtBairro.Clear();
+            txtNome.Text = "";
+            txtEmail.Text = "";
+            txtCPF.Text = "";
+            txtCEP.Text = "";
+            txtLogradouro.Text = "";
+            txtCidade.Text = "";
+            txtBairro.Text = "";
             cmbUF.Text = null;
             rbMasculino.Checked = false;
             rbFeminino.Checked = false;
-            txtNumeroCasa.Clear();
-            txtID.Clear();
-            txtComplemento.Clear();
+            txtNumeroCasa.Text = "";
+            txtID.Text = "";
+            txtComplemento.Text = "";
 
             btnInserir.Text = "INSERIR";
             btnDeletar.Visible = false;
@@ -383,9 +383,6 @@ namespace ExercicioAvaliacao
             }
         }
 
-        private void btnDeletar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

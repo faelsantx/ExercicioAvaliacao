@@ -113,11 +113,11 @@ namespace ExercicioAvaliacao
         }
         void Limpar()
         {
-            txtIdContas.Clear();
-            txtDescricao.Clear();
-            txtNome.Clear();
-            txtTipo.Clear();
-            txtValor.Clear();
+            txtIdContas.Text = "";
+            txtDescricao.Text = "";
+            txtNome.Text = "";
+            txtTipo.Text = "";
+            txtValor.Text = "";
 
 
             btnInserir.Text = "INSERIR";
@@ -195,6 +195,6 @@ namespace ExercicioAvaliacao
             }
         }
 
-
+        
     }
 }

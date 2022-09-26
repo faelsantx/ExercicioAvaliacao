@@ -89,6 +89,7 @@
             this.btnPagar.TabIndex = 4;
             this.btnPagar.Text = "pagar";
             this.btnPagar.UseVisualStyleBackColor = true;
+          
             // 
             // btnReceber
             // 
@@ -98,7 +99,6 @@
             this.btnReceber.TabIndex = 4;
             this.btnReceber.Text = "receber";
             this.btnReceber.UseVisualStyleBackColor = true;
-            
             // 
             // btnContasPagar
             // 

@@ -165,10 +165,10 @@ namespace ExercicioAvaliacao
         }
         void Limpar()
         {
-            txtDDD.Clear();
-            txtNumero.Clear();
-            txtID.Clear();
-            txtID.Clear();
+            txtDDD.Text = "";
+            txtNumero.Text = "";
+            txtID.Text = "";
+            txtID.Text = "";
             cmbOperadora.Text = " ";
 
             btnInserir.Text = "INSERIR";
