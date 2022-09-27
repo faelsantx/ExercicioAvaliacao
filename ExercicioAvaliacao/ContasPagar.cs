@@ -61,68 +61,6 @@ namespace ExercicioAvaliacao
 
         }
 
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            verificaVazio();
-            Data();
-
-            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-
-                try
-                {
-                    using (MySqlConnection cnn = new MySqlConnection())
-                    {
-                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                        cnn.Open();
-                        string sql = "update contas set nome = '" + txtNome.Text + "',descricao = '" + txtDescricao.Text + "',valor = '" + txtValor.Text + "',tipo = '" + txtTipo.Text + "', dataVencimento = '" + ClasseData.DataNova + "' where idContasPagar = '" + txtIdContas.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Atualizado com sucesso");
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-
-            }
-            txtIdContas.Text = "";
-            txtDescricao.Text = "";
-            txtNome.Text = "";
-            txtTipo.Text = "";
-            txtValor.Text = "";
-
-        }
-
-        private void btnDeletar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnn = new MySqlConnection())
-                    {
-                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                        cnn.Open();
-                        string sql = "delete from contas where idContasPagar = '" + txtIdContas.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Deletado com sucesso!");
-
-                    }
-                    Limpar();
-                    MostrarPagar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
         void MostrarPagar()
         {
             try
@@ -145,36 +83,7 @@ namespace ExercicioAvaliacao
             }
         }
 
-        private void dgwContas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (dgwContasPagar.CurrentRow.Index != -1)
-            {
-                txtIdContas.Text = dgwContasPagar.CurrentRow.Cells[0].Value.ToString();
-                txtNome.Text = dgwContasPagar.CurrentRow.Cells[1].Value.ToString();
-                txtDescricao.Text = dgwContasPagar.CurrentRow.Cells[2].Value.ToString();
-                txtValor.Text = dgwContasPagar.CurrentRow.Cells[3].Value.ToString();
-                dtpDataVencimento.Value = Convert.ToDateTime(dgwContasPagar.CurrentRow.Cells[4].Value.ToString());
-                cbPago.Text = dgwContasPagar.CurrentRow.Cells[7].Value.ToString();
-                txtTipo.Text = dgwContasPagar.CurrentRow.Cells[8].Value.ToString();
-
-                string pago = cbPago.Text;
-
-                if (pago == "Pago")
-                {
-                    cbPago.Checked = true;
-
-                }
-                else if (pago == "N/E")
-                {
-                    cbPago.Text = "Pago";
-                    cbPago.Checked = false;
-                }
-                btnInserir.Text = "ADD NEW";
-                btnDeletar.Visible = true;
-                btnAlterar.Visible = true;
-            }
-        }
+        
         void Data()
         {
             ClasseData.Data = dtpDataVencimento.Value;
@@ -208,9 +117,97 @@ namespace ExercicioAvaliacao
             }
         }
 
-        private void ContasPagar_Load(object sender, EventArgs e)
-        {
 
+        private void dgwContasPagar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwContasPagar.CurrentRow.Index != -1)
+            {
+                txtIdContas.Text = dgwContasPagar.CurrentRow.Cells[0].Value.ToString();
+                txtNome.Text = dgwContasPagar.CurrentRow.Cells[1].Value.ToString();
+                txtDescricao.Text = dgwContasPagar.CurrentRow.Cells[2].Value.ToString();
+                txtValor.Text = dgwContasPagar.CurrentRow.Cells[3].Value.ToString();
+                dtpDataVencimento.Value = Convert.ToDateTime(dgwContasPagar.CurrentRow.Cells[4].Value.ToString());
+                cbPago.Text = dgwContasPagar.CurrentRow.Cells[7].Value.ToString();
+                txtTipo.Text = dgwContasPagar.CurrentRow.Cells[8].Value.ToString();
+
+                string pago = cbPago.Text;
+
+                if (pago == "Pago")
+                {
+                    cbPago.Checked = true;
+
+                }
+                else if (pago == "N/E")
+                {
+                    cbPago.Text = "Pago";
+                    cbPago.Checked = false;
+                }
+                btnInserir.Text = "NOVO";
+                btnDeletar.Visible = true;
+                btnAlterar.Visible = true;
+            }
+        }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+            verificaVazio();
+            Data();
+
+            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    using (MySqlConnection cnn = new MySqlConnection())
+                    {
+                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                        cnn.Open();
+                        string sql = "update contas set nome = '" + txtNome.Text + "',descricao = '" + txtDescricao.Text + "',valor = '" + txtValor.Text + "',tipo = '" + txtTipo.Text + "', dataVencimento = '" + ClasseData.DataNova + "' where idContasPagar = '" + txtIdContas.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Atualizado com sucesso");
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+            MostrarPagar();
+            txtIdContas.Text = "";
+            txtDescricao.Text = "";
+            txtNome.Text = "";
+            txtTipo.Text = "";
+            txtValor.Text = "";
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnn = new MySqlConnection())
+                    {
+                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                        cnn.Open();
+                        string sql = "delete from contas where idContasPagar = '" + txtIdContas.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Deletado com sucesso!");
+
+                    }
+                    Limpar();
+                    MostrarPagar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

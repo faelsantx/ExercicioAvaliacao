@@ -71,6 +71,7 @@
             this.dgwContasPagar.Name = "dgwContasPagar";
             this.dgwContasPagar.Size = new System.Drawing.Size(690, 135);
             this.dgwContasPagar.TabIndex = 13;
+            this.dgwContasPagar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwContasPagar_CellContentDoubleClick);
             // 
             // btnPesquisar
             // 
@@ -89,6 +90,7 @@
             this.btnDeletar.TabIndex = 0;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
             // btnAlterar
             // 
@@ -98,6 +100,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnInserir
             // 
@@ -237,7 +240,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ContasPagar";
             this.Text = "ContasPagar";
-            this.Load += new System.EventHandler(this.ContasPagar_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwContasPagar)).EndInit();
             this.ResumeLayout(false);

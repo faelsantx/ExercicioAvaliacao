@@ -50,67 +50,8 @@ namespace ExercicioAvaliacao
             Limpar();
 
         }
-        private void btnDeletar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnn = new MySqlConnection())
-                    {
-                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                        cnn.Open();
-                        string sql = "delete from contas where idContasPagar = '" + txtIdContas.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Deletado com sucesso!");
-
-                    }
-                    Limpar();
-                    MostrarReceber();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            verificaVazio();
-            Data();
-
-            if (btnInserir.Text == "INSERIR" && continua == "yes")
-            {
-                if (MessageBox.Show("Deseja realmente alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-
-                    try
-                    {
-                        using (MySqlConnection cnn = new MySqlConnection())
-                        {
-                            cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
-                            cnn.Open();
-                            string sql = "update contas set nome = '" + txtNome.Text + "',descricao = '" + txtDescricao.Text + "',valor = '" + txtValor.Text + "',tipo = '" + txtTipo.Text + "', dataVencimento = '" + ClasseData.DataNova + "' where idContasPagar = '" + txtIdContas.Text + "'";
-                            MySqlCommand cmd = new MySqlCommand(sql, cnn);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Atualizado com sucesso");
-
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-
-                }
-            }
-            MostrarReceber();
-            Limpar();
-
-
-        }
+        
+        
         void Limpar()
         {
             txtIdContas.Text = "";
@@ -164,7 +105,69 @@ namespace ExercicioAvaliacao
                 continua = "yes";
             }
         }
-        private void dgwContas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+            verificaVazio();
+            Data();
+
+            if (btnInserir.Text == "INSERIR" && continua == "yes")
+            {
+                if (MessageBox.Show("Deseja realmente alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    try
+                    {
+                        using (MySqlConnection cnn = new MySqlConnection())
+                        {
+                            cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                            cnn.Open();
+                            string sql = "update contas set nome = '" + txtNome.Text + "',descricao = '" + txtDescricao.Text + "',valor = '" + txtValor.Text + "',tipo = '" + txtTipo.Text + "', dataVencimento = '" + ClasseData.DataNova + "' where idContasPagar = '" + txtIdContas.Text + "'";
+                            MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Atualizado com sucesso");
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+            }
+            MostrarReceber();
+            Limpar();
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnn = new MySqlConnection())
+                    {
+                        cnn.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306;Convert Zero DateTime = true";
+                        cnn.Open();
+                        string sql = "delete from contas where idContasPagar = '" + txtIdContas.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Deletado com sucesso!");
+
+                    }
+                    Limpar();
+                    MostrarReceber();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgwContasReceber_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgwContasReceber.CurrentRow.Index != -1)
             {
@@ -194,7 +197,5 @@ namespace ExercicioAvaliacao
 
             }
         }
-
-        
     }
 }

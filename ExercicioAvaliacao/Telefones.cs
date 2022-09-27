@@ -56,58 +56,6 @@ namespace ExercicioAvaliacao
             Limpar();
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnx = new MySqlConnection())
-                    {
-                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306";
-                        cnx.Open();
-                        string ID = txtID.Text;
-                        string sql = "update telefone set DDD = '" + txtDDD.Text + "', operadora = '" + cmbOperadora.Text + "', numero = '" + txtNumero.Text + "' where idTelefone = '" + txtID.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Telefone alterado!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-            Mostrar();
-        }
-
-        private void btnDeletar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection cnx = new MySqlConnection())
-                    {
-                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306";
-                        cnx.Open();
-                        string ID = txtID.Text;
-                        string sql = "delete from telefone where idTelefone = '" + txtID.Text + "'";
-                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Telefone cadastrado!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            }
-            Mostrar();
-            Limpar();
-        }
 
         void Mostrar()
         {
@@ -137,20 +85,7 @@ namespace ExercicioAvaliacao
             Mostrar();
         }
 
-        private void dgwTelefones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgwTelefones.CurrentRow.Index != -1)
-            {
-                txtID.Text = dgwTelefones.CurrentRow.Cells[0].Value.ToString();
-                cmbOperadora.Text = dgwTelefones.CurrentRow.Cells[3].Value.ToString();
-                txtDDD.Text = dgwTelefones.CurrentRow.Cells[4].Value.ToString();
-                txtNumero.Text = dgwTelefones.CurrentRow.Cells[5].Value.ToString();
 
-                btnInserir.Text = "ADD NEW";
-                btnDeletar.Visible = true;
-                btnAlterar.Visible = true;
-            }
-        }
         void verificaVazio()
         {
             if (cmbOperadora.Text == "" || txtDDD.Text == "" || txtNumero.Text == "")
@@ -174,6 +109,73 @@ namespace ExercicioAvaliacao
             btnInserir.Text = "INSERIR";
             btnDeletar.Visible = false;
             btnAlterar.Visible = false;
+        }
+
+        private void dgwTelefones_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwTelefones.CurrentRow.Index != -1)
+            {
+                txtID.Text = dgwTelefones.CurrentRow.Cells[0].Value.ToString();
+                cmbOperadora.Text = dgwTelefones.CurrentRow.Cells[3].Value.ToString();
+                txtDDD.Text = dgwTelefones.CurrentRow.Cells[4].Value.ToString();
+                txtNumero.Text = dgwTelefones.CurrentRow.Cells[5].Value.ToString();
+
+                btnInserir.Text = "NOVO";
+                btnDeletar.Visible = true;
+                btnAlterar.Visible = true;
+            }
+        }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente Alterar?", "ALTERAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnx = new MySqlConnection())
+                    {
+                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306";
+                        cnx.Open();
+                        string ID = txtID.Text;
+                        string sql = "update telefone set DDD = '" + txtDDD.Text + "', operadora = '" + cmbOperadora.Text + "', numero = '" + txtNumero.Text + "' where idTelefone = '" + txtID.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Telefone alterado!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            Mostrar();
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente deletar?", "Deletar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    using (MySqlConnection cnx = new MySqlConnection())
+                    {
+                        cnx.ConnectionString = "server = localhost; database = controle; uid = root; pwd =; port = 3306";
+                        cnx.Open();
+                        string ID = txtID.Text;
+                        string sql = "delete from telefone where idTelefone = '" + txtID.Text + "'";
+                        MySqlCommand cmd = new MySqlCommand(sql, cnx);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Telefone cadastrado!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            Mostrar();
+            Limpar();
         }
     }
 }

@@ -92,6 +92,8 @@ namespace ExercicioAvaliacao
         {
             Telefones telefone = new Telefones(txtID.Text);
             telefone.Show();
+
+
         }
 
         void Data()

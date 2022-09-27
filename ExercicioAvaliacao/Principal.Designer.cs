@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telefoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -59,19 +59,19 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // cadastrarToolStripMenuItem
-            // 
-            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.cadastrarToolStripMenuItem.Text = "Contatos";
-            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
-            // 
             // tarefasToolStripMenuItem
             // 
             this.tarefasToolStripMenuItem.Name = "tarefasToolStripMenuItem";
             this.tarefasToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.tarefasToolStripMenuItem.Text = "Agenda";
             this.tarefasToolStripMenuItem.Click += new System.EventHandler(this.tarefasToolStripMenuItem_Click);
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.cadastrarToolStripMenuItem.Text = "Contatos";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
             // controleContasToolStripMenuItem
             // 
@@ -83,32 +83,26 @@
             this.controleContasToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.controleContasToolStripMenuItem.Text = "Controle Contas";
             // 
+            // contasToolStripMenuItem
+            // 
+            this.contasToolStripMenuItem.Name = "contasToolStripMenuItem";
+            this.contasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.contasToolStripMenuItem.Text = "Contas";
+            this.contasToolStripMenuItem.Click += new System.EventHandler(this.contasToolStripMenuItem_Click);
+            // 
             // contasAPagarToolStripMenuItem
             // 
             this.contasAPagarToolStripMenuItem.Name = "contasAPagarToolStripMenuItem";
-            this.contasAPagarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contasAPagarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.contasAPagarToolStripMenuItem.Text = "Contas a pagar";
             this.contasAPagarToolStripMenuItem.Click += new System.EventHandler(this.contasAPagarToolStripMenuItem_Click);
             // 
             // contasAReceberToolStripMenuItem
             // 
             this.contasAReceberToolStripMenuItem.Name = "contasAReceberToolStripMenuItem";
-            this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.contasAReceberToolStripMenuItem.Text = "Contas a receber";
             this.contasAReceberToolStripMenuItem.Click += new System.EventHandler(this.contasAReceberToolStripMenuItem_Click);
-            // 
-            // contasToolStripMenuItem
-            // 
-            this.contasToolStripMenuItem.Name = "contasToolStripMenuItem";
-            this.contasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.contasToolStripMenuItem.Text = "Contas";
-            this.contasToolStripMenuItem.Click += new System.EventHandler(this.contasToolStripMenuItem_Click);
-            // 
-            // calculadoraToolStripMenuItem
-            // 
-            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.calculadoraToolStripMenuItem.Text = "Calculadora";
             // 
             // pesquisarToolStripMenuItem
             // 
@@ -121,9 +115,15 @@
             // telefoneToolStripMenuItem
             // 
             this.telefoneToolStripMenuItem.Name = "telefoneToolStripMenuItem";
-            this.telefoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.telefoneToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.telefoneToolStripMenuItem.Text = "Telefone";
             this.telefoneToolStripMenuItem.Click += new System.EventHandler(this.telefoneToolStripMenuItem_Click_1);
+            // 
+            // calculadoraToolStripMenuItem
+            // 
+            this.calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
+            this.calculadoraToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.calculadoraToolStripMenuItem.Text = "Calculadora";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -146,7 +146,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Principal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
